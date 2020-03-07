@@ -1,3 +1,7 @@
+$white: #F3F3F3;
+$gray: #454545;
+$blue:  #3C62C1;
+
 html, *{
   padding: 0;
   margin: 0;
@@ -9,4 +13,171 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: sans-serif;
+  font-weight: 300;
+  background-color: $white;
 }
+
+h2, h3, h4, h5{
+  font-weight: 300;
+}
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  select{
+    width: 300px;
+    padding: 8px 7.8rem;
+    border: none;
+    border-radius: 1px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  input, select, option{
+    font-weight: 600;
+  }
+
+  input[type=number]{
+    width: 300px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1.1rem;
+    border-radius: 1px;
+    border: none;
+  }
+
+  input[type=radio]{
+    width: 22px;
+    height: 22px;
+    padding: 1rem;
+    margin: 2px 5px;
+    border-radius: 2px;
+    border: none;
+    background-color: $white;
+  }
+
+  &__title{
+    padding: 3rem 0;
+    font-size: 2.1rem
+  }
+
+  &__checkbox{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    div{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      margin: 5px 0;
+      span{
+        font-weight: 600;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  &__prices{
+    width: 300px;
+    padding: 1rem 3rem;
+    border-radius: 11px;
+    border: 2px solid $blue;
+
+    &__value{
+      color: $blue;
+      font-size: 1.5rem;
+    }
+
+    &__box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    &__plan{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span{
+        color: $gray;
+      }
+
+      h3{
+        font-size: 1.8rem;
+        margin: 10px 0;
+        color: $blue;
+      }
+    }
+
+    &__between{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: $gray;
+    }
+  }
+
+  &__split{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__header{
+    position: absolute;
+    top: 0;
+    z-index: -10;
+  }
+
+  &__footer{
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    h1{
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+  }
+
+}
+
+.italic{
+  font-style: italic;
+}
+
+.regular-weight{
+  font-weight: 300;
+}
+
+.bold-weight{
+  font-weight: 600;
+}
+
+.blue{
+  color: $white;
+  background-color: $blue;
+}
+
+@keyframes fade{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
