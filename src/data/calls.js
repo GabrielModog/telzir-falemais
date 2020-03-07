@@ -29,7 +29,7 @@ export const calls = [
     receiver: 11,
     value: 1.9
   }
-];
+]
 
 export const plans = [
   {
@@ -44,6 +44,6 @@ export const plans = [
     name: "FaleMais120",
     plan: 120
   }
-];
+]
 
 
