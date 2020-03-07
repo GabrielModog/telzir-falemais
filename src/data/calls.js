@@ -34,15 +34,15 @@ export const calls = [
 export const plans = [
   {
     name: "FaleMais30",
-    plan: 30
+    value: 30
   },
   {
     name: "FaleMais60",
-    plan: 60
+    value: 60
   },
   {
     name: "FaleMais120",
-    plan: 120
+    value: 120
   }
 ]
 
