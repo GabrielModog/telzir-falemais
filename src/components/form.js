@@ -1,6 +1,18 @@
 import React from 'react'
 
-const Form = () => (
+const Form = ({
+  calls, 
+  plans, 
+  origin, 
+  setOrigin, 
+  receiver, 
+  setReceiver, 
+  planValue, 
+  setPlanValue, 
+  setMinutes,
+  call,
+  setCall}) => (
+
   <form className="app__split blue">
 
     <div className="app__title">
@@ -9,43 +21,56 @@ const Form = () => (
     
     <div className="app__select">
       <h2>Origem</h2>
-      <select >
-        <option>011</option>
-        <option>016</option>
-        <option>017</option>
-        <option>018</option>
+      <select onChange={(e) => setOrigin(e.target.value)} defaultValue="">
+        <option disable value="">Selecione o DDD</option>
+        <option value="11">011</option>
+        <option value="16">016</option>
+        <option value="17">017</option>
+        <option value="18">018</option>
       </select>
     </div>
-
-    <div className="app__select">
+    {origin && <div className="app__select">
       <h2>Destino</h2>
-      <select>
-        <option>011</option>
-        <option>016</option>
-        <option>017</option>
-        <option>018</option>
+      <select 
+        onChange={(e) => {
+          setReceiver(e.target.value)
+          //setCall({...call, origin: origin, receiver: receiver})
+          }}
+        defaultValue="">
+        <option disable value="">Selecione o DDD</option>
+        <option value="11">011</option>
+        <option value="16">016</option>
+        <option value="17">017</option>
+        <option value="18">018</option>
       </select>
-    </div>
+    </div>}
 
-    <div className="app__select">
-      <h2>Minutos</h2>
-      <input type="number" min="1" placeholder="1" />
-    </div>
+    {receiver && <>
+        <div className="app__select">
+          <h2>Minutos</h2>
+          <input 
+            type="number"
+            min="1" placeholder="1"
+            onChange={(e) => setMinutes(e.target.value)}
+          />
+        </div>
 
-    <div className="app__checkbox">
-      <div>
-        <input type="radio" />
-        <span>FaleMais30</span>
-      </div>
-      <div>
-        <input type="radio" />
-        <span>FaleMais60</span>
-      </div>
-      <div>
-        <input type="radio" />
-        <span>FaleMais120</span>
-      </div>
-    </div>
+        <div className="app__checkbox">
+          <div>
+            <input type="radio" name="plan" value="1" />
+            <span>FaleMais30</span>
+          </div>
+          <div>
+            <input type="radio"  name="plan" value="2" />
+            <span>FaleMais60</span>
+          </div>
+          <div>
+            <input type="radio" name="plan" value="3" />
+            <span>FaleMais120</span>
+          </div>
+        </div>
+      </>
+    }
     
   </form>
 )

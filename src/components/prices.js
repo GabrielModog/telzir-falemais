@@ -1,6 +1,14 @@
 import React from 'react'
 
-const Prices = () => (
+import {calculatePerMinutes, calculateWithPlan} from '../functions'
+
+const Prices = ({
+  origin,
+  receiver,
+  minutes,
+  transfer,
+  plan,
+}) => (
   <div className="app__split">
     <div className="app__header">
       <svg width="686" height="233" xmlns="http://www.w3.org/2000/svg">
@@ -21,12 +29,12 @@ const Prices = () => (
       <div className="app__prices__box">
       <div className="app__prices__between">
         <h3>sem FaleMais: </h3>
-        <h3 className="app__prices__value">$38</h3>
+        <h3 className="app__prices__value">${calculatePerMinutes(1.90, minutes)}</h3>
       </div>
 
       <div className="app__prices__between">
         <h3>com FaleMais: </h3>
-        <h3 className="app__prices__value">$0</h3>
+        <h3 className="app__prices__value">${calculateWithPlan(transfer.value, minutes, plan)}</h3>
       </div>       
       </div>
     </div>

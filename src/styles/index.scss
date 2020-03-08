@@ -19,7 +19,7 @@ body{
 }
 
 h2, h3, h4, h5{
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .app{
@@ -30,7 +30,7 @@ h2, h3, h4, h5{
 
   select{
     width: 300px;
-    padding: 8px 7.8rem;
+    padding: 8px 1rem;
     border: none;
     border-radius: 1px;
     margin: 10px 0;
@@ -63,13 +63,15 @@ h2, h3, h4, h5{
 
   &__title{
     padding: 3rem 0;
-    font-size: 2.1rem
+    font-size: 2.1rem;
+    animation: fade 300ms linear;
   }
 
   &__select{
     animation: fade 700ms linear;
     text-align: center;
     margin: 5px 0;
+    transition: 400ms;
   }
 
   &__checkbox{
@@ -96,6 +98,7 @@ h2, h3, h4, h5{
     padding: 1rem 3rem;
     border-radius: 11px;
     border: 2px solid $blue;
+    animation: fade 1.1s linear;
 
     &__value{
       color: $blue;
@@ -156,6 +159,7 @@ h2, h3, h4, h5{
     bottom: 0;
     padding: 1rem;
     h1{
+      color: $gray;
       font-size: 1.6rem;
       font-weight: 300;
     }

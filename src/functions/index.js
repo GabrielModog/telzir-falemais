@@ -1,5 +1,5 @@
 export const calculatePerMinutes = (value, minutes) => {
-  return minutes * value;
+  return Number((minutes * value).toFixed(2))
 }
 
 const surplusesMinutes = (currentMinutes, planMinutes) =>
@@ -8,10 +8,11 @@ const surplusesMinutes = (currentMinutes, planMinutes) =>
 export const calculateWithPlan = (value, currentMinutes, planMinutes) => {
   if (currentMinutes > planMinutes) {
     return Number(
-      (value * surplusesMinutes(currentMinutes, planMinutes) * 1.1).toFixed(2)
+      (value * surplusesMinutes(currentMinutes, planMinutes) * 1.1).toFixed(1)
     )
+  }else{
+    return 0
   }
-  return 0;
 }
 
 
