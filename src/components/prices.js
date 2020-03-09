@@ -16,19 +16,23 @@ const Prices = ({
           <path id="svg_2" d="m-1.373173,233.363747l706.88754,-234.743047l-707.583358,0l0.695818,234.743047z" strokeWidth="1.5" fill="#3c62c1" />
         </g>
       </svg>
+
     </div>
 
     <div className="app__prices">
       <div className="app__prices__box">
         <div className="app__prices__plan">
           <span>Plano Selecionado:</span>
-          <h3 className="bold-weight">FaleMais30</h3>
+          {
+            plan ? <h3 className="bold-weight">{`FaleMais${plan}`}</h3> : <h3 className="bold-weight">Selecione um plano</h3>
+          }
         </div>
       </div>
 
       <div className="app__prices__box">
+
         <div className="app__prices__between">
-          <h3>sem FaleMais: </h3>
+          <h3>sem FaleMais:</h3>
           <h3 className="app__prices__value">
             $
             {origin && receiver ? calculatePerMinutes(calls[origin][receiver], minutes) : 0}

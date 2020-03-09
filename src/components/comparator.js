@@ -17,8 +17,8 @@ const Comparator = () => {
     <div className="app">
       <Form
         origin={origin}
-        setOrigin={setOrigin}
         receiver={receiver}
+        setOrigin={setOrigin}
         setReceiver={setReceiver}
         setMinutes={setMinutes}
         setPlanValue={setPlanValue}
@@ -27,10 +27,10 @@ const Comparator = () => {
       />
 
       <Prices
+        calls={calls}
         origin={origin}
         receiver={receiver}
         minutes={minutes}
-        calls={calls}
         plan={planValue}
       />
     </div>
