@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 import Form from './form'
 import Prices from './prices'
 
-import { calls, plans } from "../data/calls";
+import calls from '../data/calls'
+import plans from '../data/plans'
 
 const Comparator = () => {
 
@@ -15,8 +16,6 @@ const Comparator = () => {
     origin: 11,
     receiver: 16
   })
-
-  const compare = calls.find(item => item.origin === call.origin && item.receiver === call.receiver)
 
   return (<div className="app">
       <Form
@@ -37,7 +36,7 @@ const Comparator = () => {
         origin={origin}
         receiver={receiver}
         minutes={minutes}
-        transfer={compare}
+        calls={calls}
         plan={plans[0].value}
       />
     </div>)

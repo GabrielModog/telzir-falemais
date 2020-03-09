@@ -18,15 +18,12 @@ const Form = ({
     <div className="app__title">
     <h1><span className="italic regular-weight">Fale</span>Mais</h1>
     </div>
-    
+
     <div className="app__select">
       <h2>Origem</h2>
       <select onChange={(e) => setOrigin(e.target.value)} defaultValue="">
         <option disable value="">Selecione o DDD</option>
-        <option value="11">011</option>
-        <option value="16">016</option>
-        <option value="17">017</option>
-        <option value="18">018</option>
+        {Object.keys(calls).map(item => <option value={item} key={item}>{item}</option>)}
       </select>
     </div>
     {origin && <div className="app__select">
@@ -38,10 +35,7 @@ const Form = ({
           }}
         defaultValue="">
         <option disable value="">Selecione o DDD</option>
-        <option value="11">011</option>
-        <option value="16">016</option>
-        <option value="17">017</option>
-        <option value="18">018</option>
+        {Object.keys(calls[origin]).map(item => <option value={item} key={item}>{item}</option>)}
       </select>
     </div>}
 

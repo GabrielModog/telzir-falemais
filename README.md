@@ -4,9 +4,13 @@ See the layout on [Figma](https://www.figma.com/file/7dbfmvxxvd3oeKiug1xZAC/Telz
 
 ## Instructions to run the app or test :
 
+### `yarn` 
+
+Install the dependencies
+
 ### `yarn start`
 
-Runs the app in the development mode.<br />
+Runs the app.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn test`

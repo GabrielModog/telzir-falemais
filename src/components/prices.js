@@ -1,12 +1,12 @@
 import React from 'react'
 
-import {calculatePerMinutes, calculateWithPlan} from '../functions'
+import {calculatePerMinutes} from '../functions'
 
 const Prices = ({
   origin,
   receiver,
   minutes,
-  transfer,
+  calls,
   plan,
 }) => (
   <div className="app__split">
@@ -29,12 +29,12 @@ const Prices = ({
       <div className="app__prices__box">
       <div className="app__prices__between">
         <h3>sem FaleMais: </h3>
-        <h3 className="app__prices__value">${calculatePerMinutes(1.90, minutes)}</h3>
+        <h3 className="app__prices__value">${origin && receiver ? calculatePerMinutes(calls[origin][receiver], minutes) : 0}</h3>
       </div>
 
       <div className="app__prices__between">
         <h3>com FaleMais: </h3>
-        <h3 className="app__prices__value">${calculateWithPlan(transfer.value, minutes, plan)}</h3>
+        <h3 className="app__prices__value">$0</h3>
       </div>       
       </div>
     </div>
