@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import Comparator from './components/comparator'
-import './styles/index.scss'
+import Comparator from './components/comparator';
+import './styles/index.scss';
 
-const App = () => <Comparator />
+const App = () => <Comparator />;
 
-export default App
+export default App;

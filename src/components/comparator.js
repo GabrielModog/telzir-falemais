@@ -1,35 +1,29 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
-import Form from './form'
-import Prices from './prices'
+import Form from './form';
+import Prices from './prices';
 
-import calls from '../data/calls'
-import plans from '../data/plans'
+import calls from '../data/calls.json';
+import plans from '../data/plans.json';
 
 const Comparator = () => {
+  const [origin, setOrigin] = useState();
+  const [receiver, setReceiver] = useState();
+  const [minutes, setMinutes] = useState(1);
+  const [planValue, setPlanValue] = useState();
+  /* const [transfer, setTransfer] = useState(); */
 
-  const [origin, setOrigin] = useState()
-  const [receiver, setReceiver] = useState()
-  const [minutes, setMinutes] = useState(1)
-  const [transfer, setTransfer] = useState()
-  const [call, setCall] = useState({
-    origin: 11,
-    receiver: 16
-  })
-
-  return (<div className="app">
+  return (
+    <div className="app">
       <Form
         origin={origin}
         setOrigin={setOrigin}
         receiver={receiver}
         setReceiver={setReceiver}
         setMinutes={setMinutes}
-        transfer={transfer}
-        setTransfer={setTransfer}
+        setPlanValue={setPlanValue}
         calls={calls}
         plans={plans}
-        call={call}
-        setCall={setCall}
       />
 
       <Prices
@@ -37,10 +31,10 @@ const Comparator = () => {
         receiver={receiver}
         minutes={minutes}
         calls={calls}
-        plan={plans[0].value}
+        plan={planValue}
       />
-    </div>)
-}
+    </div>
+  );
+};
 
-export default Comparator
-
+export default Comparator;
